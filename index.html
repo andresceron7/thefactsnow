@@ -1,0 +1,362 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>The Facts Now · Plan de PM</title>
+  <meta name="description" content="Plan de Project Management para el rediseño de The Facts Now: 8 plantillas, 12 semanas, 600 horas.">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/app.css">
+  <link rel="stylesheet" href="css/print.css" media="print">
+</head>
+<body>
+  <a class="skip" href="#main">Saltar al contenido</a>
+
+  <!-- ================= NAVBAR ================= -->
+  <header class="nav glass" id="nav">
+    <a class="nav-brand" href="#inicio" data-go="inicio" aria-label="Inicio">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <span class="brand-text">The Facts Now <span class="muted">· Plan PM</span></span>
+    </a>
+    <nav class="nav-items" aria-label="Secciones">
+      <a href="#inicio" data-go="inicio" class="nav-item"><svg class="ico" viewBox="0 0 24 24"><path d="M3 10.5 12 3l9 7.5V21a1 1 0 0 1-1 1h-5v-7h-6v7H4a1 1 0 0 1-1-1z"/></svg><span data-short="Inicio">Inicio</span></a>
+      <a href="#plan" data-go="plan" class="nav-item"><svg class="ico" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M7 13h6M10 17h7"/></svg><span data-short="Plan">Plan global</span></a>
+      <a href="#sprint1" data-go="sprint1" class="nav-item"><svg class="ico" viewBox="0 0 24 24"><rect x="3" y="3" width="5" height="18" rx="1.5"/><rect x="10" y="3" width="5" height="12" rx="1.5"/><rect x="17" y="3" width="4" height="8" rx="1.5"/></svg><span data-short="Sprint 1">Sprint 1</span></a>
+      <a href="#metodologia" data-go="metodologia" class="nav-item"><svg class="ico" viewBox="0 0 24 24"><circle cx="5" cy="12" r="2.5"/><circle cx="19" cy="6" r="2.5"/><circle cx="19" cy="18" r="2.5"/><path d="M7.5 12h4l5-5.2M11.5 12l5 5.2"/></svg><span data-short="Método">Metodología</span></a>
+      <a href="#metricas" data-go="metricas" class="nav-item"><svg class="ico" viewBox="0 0 24 24"><path d="M4 18a8 8 0 1 1 16 0"/><path d="M12 18l4-6"/></svg><span data-short="Métricas">Métricas</span></a>
+      <a href="#riesgos" data-go="riesgos" class="nav-item"><svg class="ico" viewBox="0 0 24 24"><path d="M12 3 3 20h18z"/><path d="M12 10v4M12 17h.01"/></svg><span data-short="Riesgos">Riesgos</span></a>
+      <a href="#cierre" data-go="cierre" class="nav-item nav-item--minor"><svg class="ico" viewBox="0 0 24 24"><path d="M5 12l4 4L19 6"/></svg><span data-short="Cierre">Cierre</span></a>
+      <a href="#anexo" data-go="anexo" class="nav-item nav-item--minor"><svg class="ico" viewBox="0 0 24 24"><path d="M5 4h10l4 4v12H5z"/><path d="M14 4v5h5M8 13h8M8 17h6"/></svg><span data-short="Anexo">Anexo</span></a>
+    </nav>
+    <div class="nav-progress" aria-hidden="true"><span id="progress"></span></div>
+  </header>
+
+  <div class="pager" aria-label="Navegación entre slides">
+    <button class="pager-btn" id="prevBtn" aria-label="Slide anterior"><svg class="ico" viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></button>
+    <span class="pager-count" id="pagerCount">1 / 8</span>
+    <button class="pager-btn" id="nextBtn" aria-label="Slide siguiente"><svg class="ico" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></button>
+  </div>
+
+  <main id="main" class="deck">
+
+    <!-- ================= 0 · HOME ================= -->
+    <section class="slide slide--home" id="inicio" data-title="Inicio" aria-label="Inicio">
+      <div class="wrap home-about">
+        <img class="about-photo" src="img/perfil.jpg" alt="Foto de quien presenta" width="690" height="720">
+        <div class="about-text">
+          <p class="eyebrow">Quién presenta</p>
+          <h2 class="about-title">De Product Designer a Project Manager</h2>
+          <p class="about-body">Llevo más de 10 años creando productos digitales en diferentes industrias. Mi foco siempre ha estado en entender, analizar y construir soluciones teniendo en cuenta todas las áreas y contextos que implica resolver una necesidad. Por eso hoy aprovecho la oportunidad de aprender, crecer y aplicar mi conocimiento y experiencia desde una visión más holística de lo que conlleva construir productos digitales y gestionar los equipos que los hacen posible.</p>
+          <p class="scroll-hint" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24"><path d="M12 5v14M6 13l6 6 6-6"/></svg>Baja para ver el reto</p>
+        </div>
+      </div>
+
+      <div class="wrap home-hero">
+        <p class="eyebrow">OCX · Digital Development · Plan de Project Management</p>
+        <h1 class="display">8 plantillas, 12 semanas y 600 horas, con un equipo que también atiende otros proyectos.</h1>
+        <p class="lead">Así se rediseña The Facts Now sin mover la fecha ni pasarse del presupuesto: horas protegidas, el cliente con fechas propias y los problemas a la vista antes de que lleguen a la entrega.</p>
+        <div class="hero-facts" role="list">
+          <div role="listitem"><span class="num-md">12</span><span class="label">semanas fijas · 6 sprints</span></div>
+          <div role="listitem"><span class="num-md">600 h</span><span class="label">máximo · ~50 h por semana</span></div>
+          <div role="listitem"><span class="num-md">5</span><span class="label">perfiles compartidos</span></div>
+        </div>
+        <p class="scroll-hint" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24"><path d="M12 5v14M6 13l6 6 6-6"/></svg>Baja para ver las 12 semanas</p>
+      </div>
+
+      <div class="home-story" id="homeStory">
+        <div class="home-sticky">
+          <div class="blob blob--mint" aria-hidden="true"></div>
+          <div class="blob blob--mag" aria-hidden="true"></div>
+          <div class="blob blob--lav" aria-hidden="true"></div>
+          <div class="wrap story-grid">
+            <div class="story-plan">
+              <div class="story-head">
+                <div>
+                  <p class="label">Semana</p>
+                  <p class="week-counter"><span id="weekNum">01</span><span class="muted"> / 12</span></p>
+                </div>
+                <p class="story-caption" id="storyCaption">S1 · Integración y cimientos</p>
+              </div>
+              <div class="mini-gantt" id="miniGantt" aria-label="Cronograma de 12 semanas"></div>
+            </div>
+            <div class="story-site">
+              <div class="site-frame" id="siteFrame" data-state="wire" aria-hidden="true">
+                <div class="site-bar"><i></i><i></i><i></i><span></span></div>
+                <div class="site-body">
+                  <div class="sb-hero"><div class="sb-mask"></div><div class="sb-type"><b></b><b></b></div></div>
+                  <div class="sb-row"><div></div><div></div><div></div></div>
+                  <div class="sb-cards"><div></div><div></div></div>
+                </div>
+              </div>
+              <div class="site-glass glass">
+                <p class="label">Concepto ilustrativo</p>
+                <p class="site-state" id="siteState">Wireframe</p>
+                <p class="site-sub" id="siteSub">S1 · mapa del sitio y wireframes</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="wrap home-summary">
+        <h2 class="h2">Los 5 puntos del caso, en una línea cada uno</h2>
+        <ol class="summary-list" id="summaryList">
+          <li><a href="#plan" data-go="plan"><span class="sum-t">Plan de trabajo global</span><span class="sum-a">9 épicas, 6 sprints y 3 gates. 540 h operativas + 48 de contingencia + 12 de capacitación.</span><svg class="ico" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></li>
+          <li><a href="#sprint1" data-go="sprint1"><span class="sum-t">Plan detallado del Sprint 1</span><span class="sum-a">Una semana para alinear al equipo y otra para el cliente. ~105 h y el Gate 1 presentado.</span><svg class="ico" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></li>
+          <li><a href="#metodologia" data-go="metodologia"><span class="sum-t">Estrategia y metodología</span><span class="sum-a">Híbrida: gates de aprobación hacia el cliente, sprints de 2 semanas hacia el equipo y flujo asíncrono.</span><svg class="ico" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></li>
+          <li><a href="#metricas" data-go="metricas"><span class="sum-t">Métricas del proyecto</span><span class="sum-a">7 KPIs y 14 métricas en 4 grupos, reportados con un semáforo semanal.</span><svg class="ico" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></li>
+          <li><a href="#riesgos" data-go="riesgos"><span class="sum-t">Riesgos y mitigación</span><span class="sum-a">La cadena del retraso y la métrica que rompe cada eslabón. 14 riesgos con dueño.</span><svg class="ico" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></li>
+        </ol>
+      </div>
+
+      <div class="wrap home-finding">
+        <div class="finding">
+          <p class="eyebrow">Hallazgo de alcance</p>
+          <p class="finding-text">El texto dice <b>8 secciones / 4 de alta animación</b>; la lámina muestra <b>7 / 3</b>. El plan se estima sobre <b>8 / 4</b> y se valida en el kickoff.</p>
+          <p class="finding-sub">Hipótesis: falta el detalle de un fact, porque la columna Facts mezcla dos plantillas (listado y página de cada fact). Si resulta 7 / 3, las horas liberadas pasan a contingencia.</p>
+          <button class="link-btn" data-sheet="annex:hallazgo">Ver las 8 plantillas <svg class="ico" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= 1 · PLAN GLOBAL ================= -->
+    <section class="slide" id="plan" data-title="Plan global" aria-label="Plan global">
+      <div class="wrap">
+        <header class="slide-head">
+          <p class="eyebrow">Plan de trabajo global</p>
+          <h2 class="h2">9 épicas en 6 sprints, con la carga al inicio, donde se toman las decisiones que evitan retrabajo.</h2>
+        </header>
+
+        <div class="seg seg--lg" role="tablist" aria-label="Vista del plan" data-seg="planView">
+          <button role="tab" aria-selected="true" data-val="timeline">Timeline</button>
+          <button role="tab" aria-selected="false" data-val="hours">Horas por rol</button>
+        </div>
+
+        <div class="plan-view" id="planTimeline">
+          <div class="tl-toolbar">
+            <div class="tl-legend">
+              <span><i class="lg-diamond"></i>Gate de aprobación</span>
+              <span><i class="lg-dot"></i>Entrega del cliente</span>
+              <span><i class="lg-line"></i>Ruta crítica</span>
+            </div>
+            <div class="tl-actions">
+              <span class="tl-hint">Arrastra una épica, o selecciónala y usa ← →</span>
+              <button class="btn-quiet" id="tlReset" disabled>Restablecer</button>
+            </div>
+          </div>
+          <p class="tl-alert" id="tlAlert" role="status" aria-live="polite"></p>
+          <div class="timeline-scroll" data-noswipe>
+            <div class="timeline" id="timeline"></div>
+          </div>
+          <div class="plan-notes">
+            <p><span class="label">Ruta crítica</span> Modelo ACF → Gate 2 → contenido de alta animación → patrones y secciones de alta animación → QA de rendimiento → UAT → lanzamiento. Concentra el seguimiento del PM y la mayoría de la contingencia.</p>
+            <p><span class="label">Plus</span> Librería de 5 patrones de motion reutilizables: se construyen una vez y se aplican en las 4 plantillas de alta animación.</p>
+            <button class="link-btn" data-sheet="estimation">Ver estimación épica × perfil <svg class="ico" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+          </div>
+        </div>
+
+        <div class="plan-view" id="planHours" hidden>
+          <div class="seg" role="tablist" aria-label="Perfil" data-seg="role" id="roleSeg"></div>
+          <div class="hours-grid">
+            <div class="hours-main">
+              <p class="hours-big" id="hoursBig"></p>
+              <p class="hours-caption" id="hoursCaption"></p>
+              <div class="toggle-row" id="toggle600Row" hidden>
+                <label class="switch"><input type="checkbox" id="toggle600"><span class="switch-ui" aria-hidden="true"></span><span>Ver 600 h</span></label>
+              </div>
+              <div class="stack-bar" id="stackBar"></div>
+              <div class="stack-legend" id="stackLegend"></div>
+              <h3 class="h3 mt">Por sprint</h3>
+              <div class="sprint-bars" id="sprintBars"></div>
+            </div>
+            <div class="hours-side">
+              <h3 class="h3" id="hoursListTitle">Por épica</h3>
+              <ul class="value-list" id="hoursEpicList"></ul>
+              <div id="pmActivitiesWrap">
+                <h3 class="h3 mt">En qué gasta sus horas el PM</h3>
+                <ul class="value-list" id="pmActivities"></ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= 2 · SPRINT 1 ================= -->
+    <section class="slide" id="sprint1" data-title="Sprint 1" aria-label="Sprint 1">
+      <div class="wrap wrap--wide">
+        <header class="slide-head">
+          <p class="eyebrow">Plan detallado del Sprint 1 · semanas 1 y 2</p>
+          <h2 class="h2">Primero se alinea el equipo, después entra el cliente. Al cerrar, el Gate 1 está presentado.</h2>
+        </header>
+        <div class="seg seg--lg s1-view" role="tablist" aria-label="Vista del Sprint 1" data-seg="s1View">
+          <button role="tab" aria-selected="true" data-val="list" aria-controls="taskListWrap">Lista</button>
+          <button role="tab" aria-selected="false" data-val="board" aria-controls="boardWrap">Board</button>
+        </div>
+        <div class="board-toolbar">
+          <div class="avatar-filter" id="avatarFilter" role="group" aria-label="Filtrar por rol"></div>
+          <div class="seg" role="tablist" aria-label="Semana" data-seg="week">
+            <button role="tab" aria-selected="false" data-val="1">Semana 1</button>
+            <button role="tab" aria-selected="false" data-val="2">Semana 2</button>
+            <button role="tab" aria-selected="true" data-val="all">Todo</button>
+          </div>
+          <div class="board-total"><span class="num-sm" id="boardTotal">~105 h</span><span class="label" id="boardTotalLabel">total del sprint</span></div>
+        </div>
+        <div class="board-layout">
+          <div class="task-list-wrap" id="taskListWrap">
+            <p class="status-summary" id="statusSummary" aria-live="polite"></p>
+            <div class="task-list" id="taskList" role="table" aria-label="Tareas del Sprint 1"></div>
+          </div>
+          <div class="board-scroll" id="boardWrap" data-noswipe hidden>
+            <div class="board" id="board"></div>
+          </div>
+        </div>
+        <p class="demo-note">Es una demo: el estado se reinicia al recargar. Cambia el estado de una tarea a <b>Bloqueado</b>, desde la lista o arrastrándola en el board, para ver cómo se reporta un bloqueo.</p>
+      </div>
+    </section>
+
+    <!-- ================= 3 · METODOLOGÍA ================= -->
+    <section class="slide" id="metodologia" data-title="Metodología" aria-label="Metodología">
+      <div class="wrap">
+        <header class="slide-head">
+          <p class="eyebrow">Estrategia y metodología</p>
+          <h2 class="h2">Gates de aprobación hacia el cliente, sprints de 2 semanas hacia el equipo y flujo asíncrono por defecto.</h2>
+          <p class="lead">Alcance y fecha fijos con el cliente; dentro, diseño trabaja un sprint adelante de desarrollo (dual-track).</p>
+        </header>
+
+        <div class="gates" id="gatesLine" role="list"></div>
+        <div class="gate-detail" id="gateDetail" aria-live="polite"></div>
+
+        <div class="method-grid">
+          <div class="calendar-wrap">
+            <div class="cal-head">
+              <h3 class="h3">Un sprint en el calendario</h3>
+              <p class="small muted">Sin daily sincrónica: una de 15 min con 5 personas costaría 75 h (12,5% del total).</p>
+            </div>
+            <div class="calendar-scroll" data-noswipe><div class="calendar" id="calendar"></div></div>
+          </div>
+          <div class="method-side">
+            <h3 class="h3">Flujo del board</h3>
+            <ol class="flow" id="boardFlow"></ol>
+            <p class="small muted">Máximo 2 tareas en progreso por persona.</p>
+
+            <div class="seg mt" role="tablist" aria-label="Definición" data-seg="def">
+              <button role="tab" aria-selected="true" data-val="dor">Definition of Ready</button>
+              <button role="tab" aria-selected="false" data-val="dod">Definition of Done</button>
+            </div>
+            <ul class="def-list" id="defList"></ul>
+
+            <div class="sheet-links">
+              <button class="row-link" data-sheet="annex:comunicacion"><span>Plan de comunicación</span><svg class="ico" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></button>
+              <button class="row-link" data-sheet="escalation"><span>Ruta de escalamiento</span><svg class="ico" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></button>
+              <button class="row-link" data-sheet="changes"><span>Gestión de cambios y registro de decisiones</span><svg class="ico" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= 4 · MÉTRICAS ================= -->
+    <section class="slide" id="metricas" data-title="Métricas" aria-label="Métricas">
+      <div class="wrap">
+        <header class="slide-head">
+          <p class="eyebrow">Métricas del proyecto</p>
+          <h2 class="h2">El proyecto va bien si el avance sigue a las horas, los gates llegan en fecha y UAT arranca sin bugs críticos.</h2>
+          <p class="lead">Las cifras son <b>metas</b>, no resultados. Se reporta un semáforo por grupo cada semana: verde no requiere más lectura; ámbar o rojo trae causa y acción.</p>
+        </header>
+        <h3 class="h3"><span class="dot dot--mag" aria-hidden="true"></span>7 KPIs principales</h3>
+        <div class="kpis" id="kpis"></div>
+        <h3 class="h3 mt-lg">Las 14 métricas por grupo</h3>
+        <div class="metric-groups" id="metricGroups"></div>
+        <button class="engagement-row" data-sheet="engagement">
+          <span><span class="label">Métricas del producto (engagement)</span>Se definen con el cliente en la semana 2, a partir de cómo mide hoy. Son una capa aparte.</span>
+          <svg class="ico" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg>
+        </button>
+      </div>
+    </section>
+
+    <!-- ================= 5 · RIESGOS ================= -->
+    <section class="slide" id="riesgos" data-title="Riesgos" aria-label="Riesgos">
+      <div class="wrap">
+        <header class="slide-head">
+          <p class="eyebrow">Riesgos y mitigación</p>
+          <h2 class="h2">Los riesgos más probables están encadenados. El plan pone una métrica en cada eslabón.</h2>
+        </header>
+        <div class="chain" id="chain"></div>
+        <p class="chain-note">El <b>préstamo de capacidad entre PMs</b> convierte las esperas por el cliente en horas recuperables: se prestan ahora y se devuelven cuando la dependencia se destraba.</p>
+        <div class="risk-grid">
+          <div class="risk-list-wrap">
+            <h3 class="h3">Registro de riesgos <span class="muted small">· 14, con dueño</span></h3>
+            <ul class="risk-list" id="riskList"></ul>
+          </div>
+          <div class="matrix-wrap">
+            <h3 class="h3">Probabilidad × impacto</h3>
+            <div class="matrix" id="matrix"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= 6 · CIERRE ================= -->
+    <section class="slide" id="cierre" data-title="Cierre" aria-label="Cierre">
+      <div class="wrap">
+        <header class="slide-head">
+          <p class="eyebrow">Cierre</p>
+          <h2 class="h2">Por qué este plan llega a la semana 12 dentro de las 600 h.</h2>
+        </header>
+        <ol class="ideas">
+          <li><span class="idea-n">1</span><div><h3>Proteger las horas</h3><p>Contingencia de 48 h que solo libera el PM, reuniones presupuestadas, sin daily sincrónica y cambios solo por change request.</p></div></li>
+          <li><span class="idea-n">2</span><div><h3>Controlar la dependencia del cliente</h3><p>Fechas límite firmadas en el kickoff, un sprint antes de que el equipo las necesite, y aprobaciones en máximo 3 días hábiles.</p></div></li>
+          <li><span class="idea-n">3</span><div><h3>Ver los problemas antes de que lleguen a la fecha</h3><p>Una métrica en cada eslabón de la cadena del retraso y un semáforo semanal que obliga a traer causa y acción.</p></div></li>
+        </ol>
+        <h3 class="h3 mt-lg">Además</h3>
+        <ul class="plus-list" id="plusList"></ul>
+        <p class="closing-line">El proyecto cierra cuando el cliente aprueba en UAT, el sitio está en producción y su equipo sabe editarlo solo.</p>
+      </div>
+    </section>
+
+    <!-- ================= 7 · ANEXO ================= -->
+    <section class="slide" id="anexo" data-title="Anexo" aria-label="Anexo">
+      <div class="wrap">
+        <header class="slide-head">
+          <p class="eyebrow">Anexo</p>
+          <h2 class="h2">Todo el detalle de soporte, a un clic.</h2>
+        </header>
+        <ul class="annex-list" id="annexList"></ul>
+      </div>
+    </section>
+  </main>
+
+  <!-- ================= SHEET ================= -->
+  <div class="scrim" id="scrim" hidden></div>
+  <aside class="sheet glass" id="sheet" role="dialog" aria-modal="true" aria-labelledby="sheetTitle" hidden>
+    <div class="sheet-grab" aria-hidden="true"></div>
+    <header class="sheet-head">
+      <div>
+        <p class="eyebrow" id="sheetEyebrow"></p>
+        <h2 class="sheet-title" id="sheetTitle"></h2>
+      </div>
+      <button class="icon-btn" id="sheetClose" aria-label="Cerrar"><svg class="ico" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+    </header>
+    <div class="sheet-body" id="sheetBody"></div>
+  </aside>
+
+  <div class="tooltip" id="tooltip" role="tooltip" hidden></div>
+
+  <script src="vendor/gsap.min.js"></script>
+  <script src="vendor/ScrollTrigger.min.js"></script>
+  <script src="vendor/Sortable.min.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/util.js"></script>
+  <script src="js/sheet.js"></script>
+  <script src="js/home.js"></script>
+  <script src="js/timeline.js"></script>
+  <script src="js/charts.js"></script>
+  <script src="js/board.js"></script>
+  <script src="js/method.js"></script>
+  <script src="js/metrics.js"></script>
+  <script src="js/risks.js"></script>
+  <script src="js/annex.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

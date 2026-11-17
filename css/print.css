@@ -1,0 +1,62 @@
+/* print.css — respaldo en PDF: una slide por página (16:9), sin interacción */
+@page { size: 13.333in 7.5in; margin: 0.35in 0.45in; }
+
+html, body { height: auto !important; overflow: visible !important; background: #fff !important; }
+* { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+*, *::before, *::after { transition: none !important; animation: none !important; }
+
+.nav, .pager, .skip, .scrim, .sheet, .tooltip, .scroll-hint,
+.tl-actions, .tl-alert, .board-actions, .demo-note, .chain-controls,
+.link-btn, .sheet-links, .seg[data-seg="planView"], #roleSeg, .avatar-filter, .seg[data-seg="week"],
+.card-move, .blob, .s1-view, .st-chev { display: none !important; }
+.tr { break-inside: avoid; }
+.status-ctl select { padding-right: 8px !important; }
+
+.deck { position: static !important; }
+.slide {
+  position: static !important; inset: auto !important; overflow: visible !important;
+  opacity: 1 !important; visibility: visible !important; transform: none !important;
+  padding: 0 !important; break-after: page; page-break-after: always;
+}
+.slide:last-child { break-after: auto; page-break-after: auto; }
+.wrap, .wrap--wide { max-width: none !important; padding: 0 !important; }
+.slide-head { margin-bottom: 18px !important; }
+.display { font-size: 46px !important; }
+.h2 { font-size: 32px !important; max-width: none !important; }
+.lead { font-size: 16px !important; }
+
+/* Home: el cronograma se muestra completo en una sola página */
+.slide--home .home-hero { padding: 0 !important; }
+.home-about { min-height: 0 !important; padding: 0 !important; grid-template-columns: 260px 1fr !important; }
+.slide--home .home-hero { break-before: page; }
+.home-story { height: auto !important; break-before: page; }
+.home-sticky { position: static !important; height: auto !important; background: #fff !important; overflow: visible !important; }
+.story-grid { padding-top: 0 !important; }
+.mg-bar { transform: none !important; }
+.mg-gate { transform: rotate(45deg) scale(1) !important; }
+.mg-client { opacity: 1 !important; }
+.mg-now { display: none !important; }
+.home-summary { break-before: page; padding-top: 0 !important; }
+.home-finding { padding-top: 28px !important; }
+
+/* Plan: se imprimen las dos vistas */
+#planHours[hidden] { display: block !important; break-before: page; }
+.plan-view { margin-top: 12px !important; }
+.timeline-scroll, .board-scroll, .calendar-scroll { overflow: visible !important; }
+.timeline { min-width: 0 !important; }
+
+/* Sprint 1 */
+.board { min-width: 0 !important; width: auto !important; grid-template-columns: repeat(6, 1fr) !important; }
+.board-layout { grid-template-columns: 1fr !important; }
+.col { min-height: 0 !important; }
+.card { break-inside: avoid; padding: 6px 8px !important; }
+.card-title { font-size: 11.5px !important; margin: 3px 0 5px !important; }
+.sprint-panel { break-before: page; position: static !important; }
+.board-layout.panel-closed .sprint-panel { display: block !important; }
+
+/* Riesgos y métricas */
+.chain-step, .chain-break { opacity: 1 !important; transform: none !important; }
+.risk-grid { break-before: page; }
+.matrix-wrap { position: static !important; }
+.metric-groups { break-before: page; }
+.kpi, .risk-row, .metric-row, .annex-list li, .ideas li { break-inside: avoid; }

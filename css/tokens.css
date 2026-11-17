@@ -1,0 +1,67 @@
+:root {
+  /* Marca */
+  --mint-50: #EAF8F2;
+  --mint-200: #BFEBDD;
+  --mint-400: #7FD8BE;
+  --mint-700: #1F7F64;
+  --mag-50: #FCEEF6;
+  --mag-200: #F6C7E2;
+  --mag-400: #E58CC0;
+  --mag-700: #B83C86;
+
+  /* Texto y superficies */
+  --ink: #1F2A44;
+  --ink-2: #5B6478;
+  --line: #E6E8EE;
+  --surface: #F7F8FA;
+  --surface-2: #EEF0F4;
+  --white: #FFFFFF;
+
+  /* Gama de datos (relleno / texto) */
+  --lav-f: #DCD5FA;  --lav-t: #5B4BB5;
+  --sky-f: #D3E8FB;  --sky-t: #2D6CA8;
+  --pch-f: #FDDFCC;  --pch-t: #A8572A;
+  --lim-f: #F3F0BF;  --lim-t: #7C7420;
+  --aqu-f: #CCEFF2;  --aqu-t: #1E7C86;
+  --cor-f: #F9D0CB;  --cor-t: #B04A3E;
+
+  /* Semáforo */
+  --ok: #2F8A5B;
+  --warn: #9A6516;
+  --bad: #B23A3A;
+
+  /* Tipografía */
+  --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --fs-display: clamp(40px, 5.2vw, 64px);
+  --fs-h2: clamp(30px, 3.6vw, 46px);
+  --fs-h3: 21px;
+  --fs-body: 16.5px;
+  --fs-small: 14px;
+  --fs-label: 13px;
+  --fs-num: clamp(48px, 6vw, 72px);
+
+  /* Forma */
+  --r-card: 12px;
+  --r-sheet: 20px;
+  --r-ctrl: 10px;
+  --shadow-float: 0 10px 30px rgba(31, 42, 68, .10), 0 2px 6px rgba(31, 42, 68, .06);
+  --shadow-drag: 0 16px 36px rgba(31, 42, 68, .18);
+
+  /* Movimiento */
+  --ease: cubic-bezier(.22, .61, .36, 1);
+  --t-fast: 200ms;
+  --t-med: 300ms;
+
+  /* Layout */
+  --nav-h: 64px;
+  --gutter: clamp(16px, 4vw, 56px);
+  --maxw: 1240px;
+
+  /* Vidrio */
+  --glass-bg: rgba(255, 255, 255, .55);
+  --glass-solid: rgba(255, 255, 255, .96);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root { --t-fast: 0ms; --t-med: 0ms; }
+}
