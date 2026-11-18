@@ -26,14 +26,13 @@
       <a href="#metricas" data-go="metricas" class="nav-item"><svg class="ico" viewBox="0 0 24 24"><path d="M4 18a8 8 0 1 1 16 0"/><path d="M12 18l4-6"/></svg><span data-short="Métricas">Métricas</span></a>
       <a href="#riesgos" data-go="riesgos" class="nav-item"><svg class="ico" viewBox="0 0 24 24"><path d="M12 3 3 20h18z"/><path d="M12 10v4M12 17h.01"/></svg><span data-short="Riesgos">Riesgos</span></a>
       <a href="#cierre" data-go="cierre" class="nav-item nav-item--minor"><svg class="ico" viewBox="0 0 24 24"><path d="M5 12l4 4L19 6"/></svg><span data-short="Cierre">Cierre</span></a>
-      <a href="#anexo" data-go="anexo" class="nav-item nav-item--minor"><svg class="ico" viewBox="0 0 24 24"><path d="M5 4h10l4 4v12H5z"/><path d="M14 4v5h5M8 13h8M8 17h6"/></svg><span data-short="Anexo">Anexo</span></a>
     </nav>
     <div class="nav-progress" aria-hidden="true"><span id="progress"></span></div>
   </header>
 
   <div class="pager" aria-label="Navegación entre slides">
     <button class="pager-btn" id="prevBtn" aria-label="Slide anterior"><svg class="ico" viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></button>
-    <span class="pager-count" id="pagerCount">1 / 8</span>
+    <span class="pager-count" id="pagerCount">1 / 7</span>
     <button class="pager-btn" id="nextBtn" aria-label="Slide siguiente"><svg class="ico" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></button>
   </div>
 
@@ -117,6 +116,16 @@
           <button class="link-btn" data-sheet="annex:hallazgo">Ver las 8 plantillas <svg class="ico" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
         </div>
       </div>
+      <!-- Footer del Home (acceso protegido al anexo) -->
+      <footer class="site-foot" aria-label="Pie de página">
+        <div class="wrap foot-inner">
+          <span class="foot-text">The Facts Now · Plan de Project Management</span>
+          <button class="foot-link" id="annexLock" type="button" aria-haspopup="dialog">
+            <svg class="ico" viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>
+            <span>Anexo</span>
+          </button>
+        </div>
+      </footer>
     </section>
 
     <!-- ================= 1 · PLAN GLOBAL ================= -->
@@ -326,6 +335,21 @@
       </div>
     </section>
   </main>
+
+  <!-- ================= CONTRASEÑA DEL ANEXO ================= -->
+  <dialog class="pw-dialog" id="pwDialog" aria-labelledby="pwTitle">
+    <form class="pw-form" id="pwForm" method="dialog" novalidate>
+      <p class="eyebrow">Acceso restringido</p>
+      <h2 class="pw-title" id="pwTitle">Ingresa la contraseña para ver el anexo</h2>
+      <label class="label" for="pwInput">Contraseña</label>
+      <input class="pw-input" id="pwInput" type="password" autocomplete="off" required aria-describedby="pwError">
+      <p class="pw-error" id="pwError" role="alert" hidden>Contraseña incorrecta. Inténtalo de nuevo.</p>
+      <div class="pw-actions">
+        <button class="btn-quiet" type="button" id="pwCancel">Cancelar</button>
+        <button class="btn-primary" type="submit">Entrar</button>
+      </div>
+    </form>
+  </dialog>
 
   <!-- ================= SHEET ================= -->
   <div class="scrim" id="scrim" hidden></div>

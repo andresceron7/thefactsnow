@@ -100,6 +100,36 @@ b, strong { font-weight: 650; }
 .pager-btn:disabled { opacity: .3; cursor: default; background: none; }
 .pager-count { font-size: 13px; color: var(--ink-2); min-width: 44px; text-align: center; font-variant-numeric: tabular-nums; }
 
+/* Footer del Home (con acceso protegido al anexo) */
+.site-foot { margin-top: 72px; border-top: 1px solid var(--line); }
+.foot-inner { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-top: 20px; font-size: 13px; color: var(--ink-2); }
+.foot-link {
+  display: inline-flex; align-items: center; gap: 6px; height: 36px; padding: 0 12px; border-radius: 9px;
+  font-size: 13px; font-weight: 550; color: var(--ink);
+}
+.foot-link .ico { width: 16px; height: 16px; }
+.foot-link:hover { background: var(--surface); }
+
+/* Diálogo de contraseña */
+.pw-dialog {
+  border: 0; padding: 0; border-radius: var(--r-sheet); width: min(calc(100% - 32px), 420px);
+  background: var(--white); color: var(--ink); box-shadow: var(--shadow-float);
+}
+.pw-dialog::backdrop { background: rgba(31, 42, 68, .35); }
+.pw-form { padding: 28px; display: flex; flex-direction: column; }
+.pw-title { font-size: 22px; line-height: 1.25; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 20px; }
+.pw-input {
+  margin-top: 6px; font: inherit; font-size: 16px; padding: 10px 12px; border-radius: var(--r-ctrl);
+  border: 1px solid var(--line); background: var(--surface); color: var(--ink);
+}
+.pw-input:focus-visible { outline: 2px solid var(--mint-700); outline-offset: 1px; }
+.pw-input[aria-invalid="true"] { border-color: var(--bad); }
+.pw-error { margin-top: 8px; font-size: var(--fs-small); color: var(--bad); font-weight: 550; }
+.pw-actions { display: flex; justify-content: flex-end; gap: 8px; margin-top: 24px; }
+.pw-shake { animation: pw-shake 320ms var(--ease); }
+@keyframes pw-shake { 20%, 60% { transform: translateX(-6px); } 40%, 80% { transform: translateX(6px); } }
+@media (prefers-reduced-motion: reduce) { .pw-shake { animation: none; } }
+
 /* ---------- Deck / slides ---------- */
 .deck { position: fixed; inset: 0; }
 .slide {
@@ -710,6 +740,7 @@ b, strong { font-weight: 650; }
   .nav-item::after { bottom: 4px; left: 30%; right: 30%; }
   .nav-progress { left: 20px; right: 20px; top: 0; bottom: auto; }
   .pager { display: none; }
+  .site-foot { margin-top: 48px; }
   .slide { padding: 40px 0 110px; }
   .slide--home { padding-top: 0; }
   .home-about { min-height: 0; grid-template-columns: 1fr; gap: 24px; padding-top: 48px; padding-bottom: 24px; }

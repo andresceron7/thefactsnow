@@ -5,7 +5,7 @@ html, body { height: auto !important; overflow: visible !important; background: 
 * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
 *, *::before, *::after { transition: none !important; animation: none !important; }
 
-.nav, .pager, .skip, .scrim, .sheet, .tooltip, .scroll-hint,
+.nav, .pager, .site-foot, .pw-dialog, .skip, .scrim, .sheet, .tooltip, .scroll-hint,
 .tl-actions, .tl-alert, .board-actions, .demo-note, .chain-controls,
 .link-btn, .sheet-links, .seg[data-seg="planView"], #roleSeg, .avatar-filter, .seg[data-seg="week"],
 .card-move, .blob, .s1-view, .st-chev { display: none !important; }
@@ -60,3 +60,7 @@ html, body { height: auto !important; overflow: visible !important; background: 
 .matrix-wrap { position: static !important; }
 .metric-groups { break-before: page; }
 .kpi, .risk-row, .metric-row, .annex-list li, .ideas li { break-inside: avoid; }
+
+/* El anexo está protegido: no se imprime si no se desbloqueó */
+body:not(.annex-ok) #anexo { display: none !important; }
+body:not(.annex-ok) #cierre { break-after: auto; page-break-after: auto; }
