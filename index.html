@@ -4,12 +4,13 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>The Facts Now · Plan de PM</title>
-  <meta name="description" content="Plan de Project Management para el rediseño de The Facts Now: 8 plantillas, 12 semanas, 600 horas.">
+  <meta name="description" content="Plan de Project Management para el rediseño de The Facts Now (versión resumida): 8 plantillas, 12 semanas, 600 horas.">
   <link rel="stylesheet" href="css/tokens.css">
   <link rel="stylesheet" href="css/app.css">
   <link rel="stylesheet" href="css/print.css" media="print">
 </head>
-<body>
+<!-- Versión simple: misma información base y mismos datos (js/data.js) que index.html, con menos interacción -->
+<body data-mode="simple">
   <a class="skip" href="#main">Saltar al contenido</a>
 
   <!-- ================= NAVBAR ================= -->
@@ -38,7 +39,7 @@
 
   <main id="main" class="deck">
 
-    <!-- ================= 0 · HOME ================= -->
+    <!-- ================= HOME ================= -->
     <section class="slide slide--home" id="inicio" data-title="Inicio" aria-label="Inicio">
       <div class="wrap home-about">
         <img class="about-photo" src="img/perfil.jpg" alt="Foto de quien presenta" width="690" height="720">
@@ -113,22 +114,11 @@
           <p class="eyebrow">Hallazgo de alcance</p>
           <p class="finding-text">El texto dice <b>8 secciones / 4 de alta animación</b>; la lámina muestra <b>7 / 3</b>. El plan se estima sobre <b>8 / 4</b> y se valida en el kickoff.</p>
           <p class="finding-sub">Hipótesis: falta el detalle de un fact, porque la columna Facts mezcla dos plantillas (listado y página de cada fact). Si resulta 7 / 3, las horas liberadas pasan a contingencia.</p>
-          <button class="link-btn" data-sheet="annex:hallazgo">Ver las 8 plantillas <svg class="ico" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
         </div>
       </div>
-      <!-- Footer del Home (acceso protegido al anexo) -->
-      <footer class="site-foot" aria-label="Pie de página">
-        <div class="wrap foot-inner">
-          <span class="foot-text">The Facts Now · Plan de Project Management</span>
-          <button class="foot-link" id="annexLock" type="button" aria-haspopup="dialog">
-            <svg class="ico" viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>
-            <span>Anexo</span>
-          </button>
-        </div>
-      </footer>
     </section>
 
-    <!-- ================= 1 · PLAN GLOBAL ================= -->
+    <!-- ================= PLAN GLOBAL ================= -->
     <section class="slide" id="plan" data-title="Plan global" aria-label="Plan global">
       <div class="wrap">
         <header class="slide-head">
@@ -148,19 +138,13 @@
               <span><i class="lg-dot"></i>Entrega del cliente</span>
               <span><i class="lg-line"></i>Ruta crítica</span>
             </div>
-            <div class="tl-actions">
-              <span class="tl-hint">Arrastra una épica, o selecciónala y usa ← →</span>
-              <button class="btn-quiet" id="tlReset" disabled>Restablecer</button>
-            </div>
           </div>
-          <p class="tl-alert" id="tlAlert" role="status" aria-live="polite"></p>
           <div class="timeline-scroll" data-noswipe>
             <div class="timeline" id="timeline"></div>
           </div>
           <div class="plan-notes">
             <p><span class="label">Ruta crítica</span> Modelo ACF → Gate 2 → contenido de alta animación → patrones y secciones de alta animación → QA de rendimiento → UAT → lanzamiento. Concentra el seguimiento del PM y la mayoría de la contingencia.</p>
             <p><span class="label">Plus</span> Librería de 5 patrones de motion reutilizables: se construyen una vez y se aplican en las 4 plantillas de alta animación.</p>
-            <button class="link-btn" data-sheet="estimation">Ver estimación épica × perfil <svg class="ico" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
           </div>
         </div>
 
@@ -191,40 +175,25 @@
       </div>
     </section>
 
-    <!-- ================= 2 · SPRINT 1 ================= -->
+    <!-- ================= SPRINT 1 ================= -->
     <section class="slide" id="sprint1" data-title="Sprint 1" aria-label="Sprint 1">
       <div class="wrap wrap--wide">
         <header class="slide-head">
           <p class="eyebrow">Plan detallado del Sprint 1 · semanas 1 y 2</p>
           <h2 class="h2">Primero se alinea el equipo, después entra el cliente. Al cerrar, el Gate 1 está presentado.</h2>
         </header>
-        <div class="seg seg--lg s1-view" role="tablist" aria-label="Vista del Sprint 1" data-seg="s1View">
-          <button role="tab" aria-selected="true" data-val="list" aria-controls="taskListWrap">Lista</button>
-          <button role="tab" aria-selected="false" data-val="board" aria-controls="boardWrap">Board</button>
-        </div>
         <div class="board-toolbar">
-          <div class="avatar-filter" id="avatarFilter" role="group" aria-label="Filtrar por rol"></div>
-          <div class="seg" role="tablist" aria-label="Semana" data-seg="week">
-            <button role="tab" aria-selected="false" data-val="1">Semana 1</button>
-            <button role="tab" aria-selected="false" data-val="2">Semana 2</button>
-            <button role="tab" aria-selected="true" data-val="all">Todo</button>
-          </div>
           <div class="board-total"><span class="num-sm" id="boardTotal">~105 h</span><span class="label" id="boardTotalLabel">total del sprint</span></div>
         </div>
         <div class="board-layout">
           <div class="task-list-wrap" id="taskListWrap">
-            <p class="status-summary" id="statusSummary" aria-live="polite"></p>
             <div class="task-list" id="taskList" role="table" aria-label="Tareas del Sprint 1"></div>
           </div>
-          <div class="board-scroll" id="boardWrap" data-noswipe hidden>
-            <div class="board" id="board"></div>
-          </div>
         </div>
-        <p class="demo-note">Es una demo: el estado se reinicia al recargar. Cambia el estado de una tarea a <b>Bloqueado</b>, desde la lista o arrastrándola en el board, para ver cómo se reporta un bloqueo.</p>
       </div>
     </section>
 
-    <!-- ================= 3 · METODOLOGÍA ================= -->
+    <!-- ================= METODOLOGÍA ================= -->
     <section class="slide" id="metodologia" data-title="Metodología" aria-label="Metodología">
       <div class="wrap">
         <header class="slide-head">
@@ -234,7 +203,6 @@
         </header>
 
         <div class="gates" id="gatesLine" role="list"></div>
-        <div class="gate-detail" id="gateDetail" aria-live="polite"></div>
 
         <div class="method-grid">
           <div class="calendar-wrap">
@@ -254,18 +222,14 @@
               <button role="tab" aria-selected="false" data-val="dod">Definition of Done</button>
             </div>
             <ul class="def-list" id="defList"></ul>
-
-            <div class="sheet-links">
-              <button class="row-link" data-sheet="annex:comunicacion"><span>Plan de comunicación</span><svg class="ico" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></button>
-              <button class="row-link" data-sheet="escalation"><span>Ruta de escalamiento</span><svg class="ico" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></button>
-              <button class="row-link" data-sheet="changes"><span>Gestión de cambios y registro de decisiones</span><svg class="ico" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></button>
-            </div>
           </div>
         </div>
+
+        <div class="method-summary" id="methodSummary"></div>
       </div>
     </section>
 
-    <!-- ================= 4 · MÉTRICAS ================= -->
+    <!-- ================= MÉTRICAS ================= -->
     <section class="slide" id="metricas" data-title="Métricas" aria-label="Métricas">
       <div class="wrap">
         <header class="slide-head">
@@ -277,14 +241,13 @@
         <div class="kpis" id="kpis"></div>
         <h3 class="h3 mt-lg">Las 14 métricas por grupo</h3>
         <div class="metric-groups" id="metricGroups"></div>
-        <button class="engagement-row" data-sheet="engagement">
-          <span><span class="label">Métricas del producto (engagement)</span>Se definen con el cliente en la semana 2, a partir de cómo mide hoy. Son una capa aparte.</span>
-          <svg class="ico" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg>
-        </button>
+        <div class="engagement-row engagement-row--static">
+          <span><span class="label">Métricas del producto (engagement)</span>Se definen con el cliente en la semana 2, a partir de cómo mide hoy. Son una capa aparte: miden si el sitio cumple su objetivo, no si el proyecto se ejecuta bien.</span>
+        </div>
       </div>
     </section>
 
-    <!-- ================= 5 · RIESGOS ================= -->
+    <!-- ================= RIESGOS ================= -->
     <section class="slide" id="riesgos" data-title="Riesgos" aria-label="Riesgos">
       <div class="wrap">
         <header class="slide-head">
@@ -293,20 +256,14 @@
         </header>
         <div class="chain" id="chain"></div>
         <p class="chain-note">El <b>préstamo de capacidad entre PMs</b> convierte las esperas por el cliente en horas recuperables: se prestan ahora y se devuelven cuando la dependencia se destraba.</p>
-        <div class="risk-grid">
-          <div class="risk-list-wrap">
-            <h3 class="h3">Registro de riesgos <span class="muted small">· 14, con dueño</span></h3>
-            <ul class="risk-list" id="riskList"></ul>
-          </div>
-          <div class="matrix-wrap">
-            <h3 class="h3">Probabilidad × impacto</h3>
-            <div class="matrix" id="matrix"></div>
-          </div>
+        <div class="risk-simple">
+          <h3 class="h3">Registro de riesgos <span class="muted small">· 14, con dueño</span></h3>
+          <ul class="risk-list" id="riskList"></ul>
         </div>
       </div>
     </section>
 
-    <!-- ================= 6 · CIERRE ================= -->
+    <!-- ================= CIERRE ================= -->
     <section class="slide" id="cierre" data-title="Cierre" aria-label="Cierre">
       <div class="wrap">
         <header class="slide-head">
@@ -323,35 +280,9 @@
         <p class="closing-line">El proyecto cierra cuando el cliente aprueba en UAT, el sitio está en producción y su equipo sabe editarlo solo.</p>
       </div>
     </section>
-
-    <!-- ================= 7 · ANEXO ================= -->
-    <section class="slide" id="anexo" data-title="Anexo" aria-label="Anexo">
-      <div class="wrap">
-        <header class="slide-head">
-          <p class="eyebrow">Anexo</p>
-          <h2 class="h2">Todo el detalle de soporte, a un clic.</h2>
-        </header>
-        <ul class="annex-list" id="annexList"></ul>
-      </div>
-    </section>
   </main>
 
-  <!-- ================= CONTRASEÑA DEL ANEXO ================= -->
-  <dialog class="pw-dialog" id="pwDialog" aria-labelledby="pwTitle">
-    <form class="pw-form" id="pwForm" method="dialog" novalidate>
-      <p class="eyebrow">Acceso restringido</p>
-      <h2 class="pw-title" id="pwTitle">Ingresa la contraseña para ver el anexo</h2>
-      <label class="label" for="pwInput">Contraseña</label>
-      <input class="pw-input" id="pwInput" type="password" autocomplete="off" required aria-describedby="pwError">
-      <p class="pw-error" id="pwError" role="alert" hidden>Contraseña incorrecta. Inténtalo de nuevo.</p>
-      <div class="pw-actions">
-        <button class="btn-quiet" type="button" id="pwCancel">Cancelar</button>
-        <button class="btn-primary" type="submit">Entrar</button>
-      </div>
-    </form>
-  </dialog>
-
-  <!-- ================= SHEET ================= -->
+  <!-- ================= SHEET (solo para el detalle de los 7 KPIs) ================= -->
   <div class="scrim" id="scrim" hidden></div>
   <aside class="sheet glass" id="sheet" role="dialog" aria-modal="true" aria-labelledby="sheetTitle" hidden>
     <div class="sheet-grab" aria-hidden="true"></div>
@@ -369,7 +300,6 @@
 
   <script src="vendor/gsap.min.js"></script>
   <script src="vendor/ScrollTrigger.min.js"></script>
-  <script src="vendor/Sortable.min.js"></script>
   <script src="js/data.js"></script>
   <script src="js/util.js"></script>
   <script src="js/sheet.js"></script>
@@ -380,7 +310,6 @@
   <script src="js/method.js"></script>
   <script src="js/metrics.js"></script>
   <script src="js/risks.js"></script>
-  <script src="js/annex.js"></script>
   <script src="js/app.js"></script>
 </body>
 </html>

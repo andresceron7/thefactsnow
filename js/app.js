@@ -63,6 +63,7 @@
   }
   function askPassword() {
     if (unlocked) { go(PROTECTED); return; }
+    if (!dlg) return;
     U.hideTip();
     if (Sheet.isOpen()) Sheet.close('nav');
     input.value = '';
@@ -71,6 +72,7 @@
     input.focus();
   }
   function bindPassword() {
+    if (!dlg) return; // la versión simple no tiene anexo ni diálogo
     $('#annexLock').addEventListener('click', askPassword);
     $('#pwCancel').addEventListener('click', () => dlg.close());
     dlg.addEventListener('click', (e) => { if (e.target === dlg) dlg.close(); }); // clic fuera del panel
@@ -105,7 +107,7 @@
     window.addEventListener('hashchange', () => go(location.hash.slice(1) || 'inicio', { push: false }));
 
     document.addEventListener('keydown', (e) => {
-      if (Sheet.isOpen() || dlg.open || e.defaultPrevented || e.altKey || e.metaKey || e.ctrlKey) return;
+      if (Sheet.isOpen() || (dlg && dlg.open) || e.defaultPrevented || e.altKey || e.metaKey || e.ctrlKey) return;
       const t = e.target;
       if (t.closest && t.closest('input, textarea, select, [contenteditable], .seg, .tl-bar, .move-menu')) return;
       if (e.key === 'ArrowRight') { e.preventDefault(); step(1); }
@@ -116,7 +118,7 @@
     // Swipe horizontal en móvil (fuera de timeline, board y calendario, que tienen su propio scroll)
     let x0 = null, y0 = 0, t0 = 0;
     $('#main').addEventListener('touchstart', (e) => {
-      if (Sheet.isOpen() || dlg.open || e.target.closest('[data-noswipe], .sortable-chosen')) { x0 = null; return; }
+      if (Sheet.isOpen() || (dlg && dlg.open) || e.target.closest('[data-noswipe], .sortable-chosen')) { x0 = null; return; }
       x0 = e.touches[0].clientX; y0 = e.touches[0].clientY; t0 = Date.now();
     }, { passive: true });
     $('#main').addEventListener('touchend', (e) => {
