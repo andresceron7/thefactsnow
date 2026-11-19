@@ -298,7 +298,7 @@ window.DATA = (function () {
     { name: 'Equipo compartido', desc: 'Una urgencia de otro proyecto le quita horas a una persona.', metric: 'Capacidad real vs. comprometida', goal: '≥90%' },
     { name: 'Bloqueo silencioso', desc: 'Esa persona, o alguien que la espera, queda detenida sin avisar.', metric: 'Tiempo de bloqueo', goal: '<48 h' },
     { name: 'Backlog acumulado', desc: 'Las tareas se aplazan sprint tras sprint.', metric: 'Edad del backlog', goal: '0 tareas > 2 sprints' },
-    { name: 'Fecha en riesgo', desc: 'Con 12 semanas fijas, el retraso acumulado llega a la entrega.', metric: 'Horas vs. avance y uso de la contingencia', goal: '≤5% · ≤50% antes de S8' }
+    { name: 'Fecha en riesgo', desc: 'Con 12 semanas fijas, el retraso acumulado llega a la entrega.', metric: 'Horas vs. avance y uso de la contingencia', goal: '≤5% · ≤50% antes de Semana 8' }
   ];
 
   /* ---------- Anexo ---------- */
